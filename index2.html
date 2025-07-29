@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+
+    <title>MY PORTOFOLIO | FANDY</title>
+
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+        color: var(--secondary-color);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 3px;
+        background: var(--primary-color);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+      }
+
+      .timeline:before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+        border-radius: 10px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+      }
+
+      .timeline-content {
+        padding: 30px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .timeline-date {
+        background: var(--primary-color);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      .timeline-content h3 {
+        font-family: 'Playfair Display', serif;
+        margin: 0 0 10px 0;
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+      }
+
+      .timeline-content p {
+        margin-bottom: 10px;
+      }
+
+      .timeline-content em {
+        color: #666;
+        font-style: italic;
+        display: block;
+        margin-top: 10px;
+        font-size: 0.9rem;
+      }
+
+      .timeline-item:after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        border: 4px solid var(--primary-color);
+        border-radius: 50%;
+        top: 30px;
+        z-index: 1;
+      }
+
+      .timeline-item:nth-child(odd):after {
+        right: -12px;
+      }
+
+      .timeline-item:nth-child(even):after {
+        left: -12px;
+      }
+
+      @media (max-width: 768px) {
+        .timeline:before {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item:nth-child(even) {
+          left: 0;
+        }
+
+        .timeline-item:after {
+          left: 18px;
+        }
+
+        .timeline-item:nth-child(odd):after,
+        .timeline-item:nth-child(even):after {
+          left: 18px;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .timeline-item {
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+      }
+
+      .timeline-item:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .timeline-item:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .timeline-item:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="education" class="py-5">
+      <div class="container py-4">
+        <div class="section-title">
+          <h2>Riwayat Pendidikan</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2024 - Sekarang</div>
+              <h3><i class="bi bi-laptop"></i> SMKN 5 Malang</h3>
+              <p class="fw-bold">Jurusan Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
+              <p><em>Mempelajari dasar-dasar pemrograman, desain web, dan pengembangan aplikasi</em></p>
+              <div class="mt-3">
+                <span class="badge bg-primary me-2">HTML/CSS</span>
+                <span class="badge bg-primary me-2">JavaScript</span>
+                <span class="badge bg-primary me-2">PHP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2021 - 2024</div>
+              <h3><i class="bi bi-book"></i> SMP Negeri 20 Malang</h3>
+              <p class="fw-bold">Eskul Badminton & Basket</p>
+              <p><em>Aktif di ekstrakurikuler Badminton dan Basket</em></p>
+              <div class="mt-3">
+                <span class="badge bg-success me-2">Badminton</span>
+                <span class="badge bg-success me-2">Basket</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2015 - 2021</div>
+              <h3><i class="bi bi-pencil"></i> SD Negeri Blimbing 2 Malang</h3>
+              <p><em>Juara 2 lomba cipta pantun FLS2N tingkat kota Malang</em></p>
+              <div class="mt-3">
+                <span class="badge bg-warning text-dark me-2">Pantun</span>
+                <span class="badge bg-warning text-dark me-2">FLS2N</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
